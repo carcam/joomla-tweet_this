@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" type="plugin" group="editors-xtd" method="upgrade">
+	<name>Editors xtd - Tweet This</name>
+	<author>Carlos Cámara</author>
+	<creationDate>November 2017</creationDate>
+	<copyright>Copyright (C) 2017 Hepta Technologies SL. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>carlos@hepta.es</authorEmail>
+	<authorUrl>https://extensions.hepta.es</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_EDITORS-XTD_TWEET_THIS_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="tweet_this">tweet_this.php</filename>
+	</files>
+	<media folder="media" destination="plg_editors-xtd_tweet_this">
+		<folder>js</folder>
+		<folder>css</folder>
+	</media>
+	<languages folder="languages">
+		<language tag="en-GB">en-GB/en-GB.plg_editors-xtd_tweet_this.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_editors-xtd_tweet_this.sys.ini</language>
+	</languages>
+</extension>
