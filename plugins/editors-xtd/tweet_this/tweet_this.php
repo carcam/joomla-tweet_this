@@ -37,8 +37,8 @@ class PlgButtonTweet_this extends JPlugin
 		JHtml::_('bootstrap.framework');
 		JHtml::_('bootstrap.loadCss');
 
-		JHtml::script('plg_editors-xtd_tweet_this/tweet_this.js', false, true);
-		JHtml::style('plg_editors-xtd_tweet_this/tweet_this.css');
+		JHtml::script('plg_editors-xtd_tweet_this/tweet_this.js', array('relative' => true));
+		JHtml::stylesheet('plg_editors-xtd_tweet_this/tweet_this.css', array('relative' => true));
 
 		$button = new JObject;
 		$button->modal = false;
