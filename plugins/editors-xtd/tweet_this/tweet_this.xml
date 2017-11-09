@@ -15,6 +15,7 @@
 	<media folder="media" destination="plg_editors-xtd_tweet_this">
 		<folder>js</folder>
 		<folder>css</folder>
+		<folder>fonts</folder>
 	</media>
 	<languages folder="languages">
 		<language tag="en-GB">en-GB/en-GB.plg_editors-xtd_tweet_this.ini</language>
