@@ -5,6 +5,15 @@
  *  @link https://extensions.hepta.es
 */
 
+#tweetMeModal {
+    /* new custom width */
+    width: 400px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -280px;
+	text-align: center;
+}
+
+/* Fontastic fonts */
 @charset "UTF-8";
 
 @font-face {
