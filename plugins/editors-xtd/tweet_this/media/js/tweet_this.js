@@ -30,10 +30,10 @@ function getQuoteToInsert(quote)
 	var tweetThisLink = "http://twitter.com/home/?status=" + encodeURI(quote);
 
 	var quoteElement = jQuery("<blockquote/>")
-	var paragraph = jQuery("<p></p>").text(quote)
-	var button = jQuery("<a/>").attr('href', tweetThisLink).addClass('btn-link').text('Tweet Me');
+	var paragraph = jQuery("<p></p>").addClass("tweet-me-quote-area").text(quote)
+	var button = jQuery('<div/>').addClass("tweet-me-button-area").prepend(jQuery("<a/>").attr('href', tweetThisLink).addClass('btn-link').text('Tweet Me'));
 	
-	return jQuery('<div/>').prepend(quoteElement.prepend(paragraph.prepend(button))).html();
+	return jQuery('<div/>').prepend(quoteElement.prepend(paragraph.append(button))).html();
 }
 
 function insertText(editor){
@@ -57,7 +57,7 @@ function addModalHtml (editor){
 	var bootstrap3_enabled = (typeof jQuery().emulateTransitionEnd == 'function');
 	if (!document.getElementById("tweetMeModal")){
 		if (bootstrap3_enabled){
-			tweetMeModal = '<div class="modal   fade" id="tweetMeModal" tabindex="-1" role="dialog" aria-labelledby="tweetMeModalLabel" aria-hidden="true" >'
+			tweetMeModal = '<div class="modal fade" id="tweetMeModal" tabindex="-1" role="dialog" aria-labelledby="tweetMeModalLabel" aria-hidden="true" >'
 				+'<div class="modal-dialog modal-lg">'
 					+'<div class="modal-content">'
 						+'<div class="modal-header">'
@@ -77,29 +77,24 @@ function addModalHtml (editor){
 			+'</div>';
 		}
 		else {
-			tweetMeModal = '<div class="modal  hide fade" id="tweetMeModal" tabindex="-1" role="dialog" aria-labelledby="tweetMeModalLabel" aria-hidden="true" >'
-				+'<div class="modal-dialog modal-lg">'
-					+'<div class="modal-content">'
+			tweetMeModal = '<div class="modal hide fade" id="tweetMeModal" tabindex="-1" role="dialog" aria-labelledby="tweetMeModalLabel" aria-hidden="true" >'
 						+'<div class="modal-header">'
 							+'<button type="button" class="close"  data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
-							+'<h4 class="modal-title" id="tweetMeModalLabel">Tweet Me</h4>'
+							+'<h3 class="modal-title" id="tweetMeModalLabel">Tweet Me</h3>'
 						+'</div>'
 						+'<div class="modal-body">'
-							+ '<div class="row-fluid">'
-								+ '<div class="span12">'
+								+ '<div>'
 									+'<label>Quote:</label>'
 									+'<input type="textarea" id="tweetme-quote" />'
 								+ '</div>'
-							+ '</div>'
-							+ '<div class="row-fluid">'
-								+'<button class="btn insertButton" onclick="insertText(\''+editor+'\')">Insert</button>'
-							+ '</div>'
 						+'</div>'
-					+'</div>'
-				+'</div>'
+						+ '<div class="modal-footer">'
+								+'<button class="btn btn-primary insertButton" onclick="insertText(\''+editor+'\')">Insert</button>'
+						+ '</div>'
 			+'</div>';
 		}
 		// see http://stackoverflow.com/questions/10636667/bootstrap-modal-appearing-under-background
 		jQuery(tweetMeModal).appendTo("body");
 	}
 }
+
