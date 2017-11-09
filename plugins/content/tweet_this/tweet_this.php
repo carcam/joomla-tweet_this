@@ -45,5 +45,32 @@ class PlgContentTweet_this extends JPlugin
 			return true;
 		}
 
+		$doc = new DOMDocument();
+		$doc->loadHTML('<?xml encoding="utf-8" ?>' . $article->text);
+		$selector = new DOMXPath($doc);
+
+		$result = $selector->query('//div[@class="tweet-me-button-area"]/a');
+
+		foreach($result as $node)
+		{
+		    $this->replaceNode($node);
+		}
+		
+        $article->text = str_replace('<?xml encoding="utf-8" ?>', '', $doc->saveHTML());
+	}
+	
+	protected function replaceNode($node)
+	{
+	    $link = $node->getAttribute('href');
+    	
+        $encodedSentence = preg_replace('~(http(s)?://(www\.)?)?twitter\.com/home/\?status\=~', '', $link);
+    	
+    	$sentence = urldecode($encodedSentence);
+    		
+    	$sentence .= " Via " . JUri::base();
+    		
+    	$finalLink = 'https://twitter.com/home/?status=' . urlencode($sentence);
+    		
+    	$node->setAttribute('href',$finalLink);
 	}
 }
