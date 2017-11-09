@@ -20,5 +20,7 @@
 	<languages folder="languages">
 		<language tag="en-GB">en-GB/en-GB.plg_editors-xtd_tweet_this.ini</language>
 		<language tag="en-GB">en-GB/en-GB.plg_editors-xtd_tweet_this.sys.ini</language>
+		<language tag="es-ES">es-ES/es-ES.plg_editors-xtd_tweet_this.ini</language>
+		<language tag="es-ES">es-ES/es-ES.plg_editors-xtd_tweet_this.sys.ini</language>
 	</languages>
 </extension>
