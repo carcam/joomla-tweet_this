@@ -35,7 +35,6 @@ class PlgButtonTweet_this extends JPlugin
 	public function onDisplay($name)
 	{	
 		JHtml::_('bootstrap.framework');
-		JHtml::_('bootstrap.loadCss');
 
 		JHtml::script('plg_editors-xtd_tweet_this/tweet_this.js', array('relative' => true));
 		JHtml::stylesheet('plg_editors-xtd_tweet_this/tweet_this.css', array('relative' => true));
@@ -44,7 +43,7 @@ class PlgButtonTweet_this extends JPlugin
 		$button->modal = false;
 		$button->class = 'btn';
 		$button->onclick = 'launchModal(\''.$name.'\');return false;';
-		$button->text = "<span class='icon-twitter'>" . JText::_('PLG_EDITORS-XTD_TWEET_THIS_BUTTON_LOAD') . "</span>";
+		$button->text = JText::_('PLG_EDITORS-XTD_TWEET_THIS_BUTTON_LOAD');
 		$button->name = 'tweetthis-twitter';
 
 		// @TODO: The button writer needs to take into account the javascript directive
