@@ -39,6 +39,11 @@ class PlgButtonTweet_this extends JPlugin
 		JHtml::script('plg_editors-xtd_tweet_this/tweet_this.js', array('relative' => true));
 		JHtml::stylesheet('plg_editors-xtd_tweet_this/tweet_this.css', array('relative' => true));
 
+		JText::script('PLG_EDITORS-XTD_TWEET_THIS_TWEET_ME_CTA_LABEL');
+		JText::script('PLG_EDITORS-XTD_TWEET_THIS_MODAL_TITLE');
+		JText::script('PLG_EDITORS-XTD_TWEET_THIS_MODAL_INSERT_BUTTON');
+		JText::script('PLG_EDITORS-XTD_TWEET_THIS_MODAL_QUOTE_LABEL');
+
 		$button = new JObject;
 		$button->modal = false;
 		$button->class = 'btn';
